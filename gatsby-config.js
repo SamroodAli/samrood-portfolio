@@ -4,6 +4,7 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 const googleAnalyticsTrackingId = process.env.GOOGLE_ANALYTICS_ID
 
 module.exports = {
+  pathPrefix:"/samrood-portfolio-prototype",
   siteMetadata: {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
