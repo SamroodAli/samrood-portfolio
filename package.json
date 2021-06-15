@@ -7,7 +7,7 @@
   "license": "0BSD",
   "starter-name": "gatsby-starter-portfolio-cara",
   "repository": {
-    "url": "https://github.com/SamroodAli/samrood-portfolio-prototype"
+    "url": "https://github.com/SamroodAli/samrood-portfolio"
   },
   "scripts": {
     "build": "gatsby build",
