@@ -27,17 +27,17 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-9f6430d1849aa9d74751.js"
+    "url": "webpack-runtime-0e7a952a709f25bd26d7.js"
   },
   {
     "url": "framework-0c99cb064d432704945a.js"
   },
   {
-    "url": "app-bc33e0db2c0a1c43b7e6.js"
+    "url": "app-7af83016e0c6bfe9ec46.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "d5aa5456fbd0d44c5d42290f1b0efc38"
+    "revision": "956e4ad00f5759a8b3c8a0a6f07cc491"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-354fb2b32e407c1c10c0.js"
@@ -52,14 +52,14 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "508dedd9877bb4ba020e7eb738597037"
+    "revision": "a64413c361ccf8c2f15b47f820d1e309"
   },
   {
     "url": "polyfill-1a2285751bcd6c75f9b2.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "75ede6f789d084c0eaba56bb4467a248"
+    "revision": "58964cc7585bea0036f437a6ef639769"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -146,12 +146,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/samrood-portfolio-prototype`), ``)
+  pathname = pathname.replace(new RegExp(`^/samrood-portfolio`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/samrood-portfolio-prototype/app-bc33e0db2c0a1c43b7e6.js`))) {
+  if (!resources || !(await caches.match(`/samrood-portfolio/app-7af83016e0c6bfe9ec46.js`))) {
     return await fetch(event.request)
   }
 
@@ -164,7 +164,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/samrood-portfolio-prototype/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/samrood-portfolio/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
